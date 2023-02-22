@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Square</h1>
+        <label for="squareSide">Lenght of side:</label>
+        <input id="squareSide" type="text">
+        <button id="squareAreaButton">Calculate Area</button>
+        <label id="squareArea"></label>
+    </div>
+    <div>
+        <h1>Triangle</h1>
+        <label for="triangleBase">Lenght of base:</label>
+        <input id="triangleBase" type="text">
+        <label for="triangleHeight">Lenght of vertical height:</label>
+        <input id="triangleHeight" type="text">
+        <button id="triangleAreaButton">Calculate Area</button>
+        <label id="triangleArea"></label>
+    </div>
+    <div>
+        <h1>Circle</h1>
+        <label for="circleRadius">Lenght of radius:</label>
+        <input id="circleRadius" type="text">
+        <button id="circleAreaButton">Calculate Area</button>
+        <label id="circleArea"></label>
+    </div>
+</body>
+<script>
+    document.getElementById('squareAreaButton').addEventListener('click', (ev) => {
+        const side = parseFloat( document.getElementById('squareSide').value )
+        document.getElementById('squareArea').textContent = `The square area is ${ side * 4 } inches`
+    })
+    document.getElementById('triangleAreaButton').addEventListener('click', (ev) => {
+        const base = parseFloat( document.getElementById('triangleBase').value )
+        const height = parseFloat( document.getElementById('triangleHeight').value )
+        document.getElementById('triangleArea').textContent = `The triangle area is ${ ( base * height ) / 2 } inches`
+    })
+    document.getElementById('circleAreaButton').addEventListener('click', (ev) => {
+        const radius = parseFloat( document.getElementById('circleRadius').value )
+        document.getElementById('circleArea').textContent = `The circle area is ${ ( radius * radius ) * 3.1416 } inches`
+    })
+</script>
+</html>
